@@ -323,8 +323,8 @@ body {
 }
 
 .service-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: rgba(99, 102, 241, 0.3);
 }
 
@@ -379,13 +379,13 @@ body {
 }
 
 .service-item:hover .service-image .image-placeholder {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
 .service-item:hover .service-image .image-placeholder::before {
-    transform: scale(1.2);
-    opacity: 0.5;
+    transform: scale(1.1);
+    opacity: 0.4;
 }
 
 .service-content {
@@ -724,6 +724,27 @@ body {
 
     .section-title {
         font-size: 2rem;
+    }
+    
+    /* Оптимизации для мобильных устройств */
+    .service-item {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    .service-item:hover {
+        transform: translateY(-3px) translateZ(0);
+    }
+    
+    .service-image .image-placeholder {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    .service-item:hover .service-image .image-placeholder {
+        transform: scale(1.05) translateZ(0);
     }
 }
 

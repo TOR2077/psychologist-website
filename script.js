@@ -195,10 +195,19 @@ messageTextarea.addEventListener('input', function() {
 // Добавляем интерактивность для карточек услуг
 document.querySelectorAll('.service-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
+        this.style.transform = 'translateY(-3px)';
     });
     
     item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+    
+    // Оптимизация для мобильных устройств
+    item.addEventListener('touchstart', function() {
+        this.style.transform = 'translateY(-2px)';
+    });
+    
+    item.addEventListener('touchend', function() {
         this.style.transform = 'translateY(0)';
     });
 });
