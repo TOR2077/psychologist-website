@@ -327,6 +327,7 @@ body {
     border-radius: 25px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .service-item:hover::before {
