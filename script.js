@@ -296,4 +296,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalText = heroTitle.textContent;
         typeWriter(heroTitle, originalText, 50);
     }
+
+    // Кликабельные кнопки "Записаться" в услугах: переход к контактам + автоподстановка услуги
+    const serviceButtons = document.querySelectorAll('.service-item .btn');
+    const selectText = document.querySelector('.select-text');
+    const hiddenInput = document.getElementById('service');
+    const contactSection = document.getElementById('contact');
+    const nameInput = document.getElementById('name');
+
+    const serviceMap = {
+        'Консультации по адаптации': 'adaptation-consultation',
+        'Сказкотерапия': 'fairytale-therapy',
+        'Адаптация к детскому саду «Идём в садик»': 'kindergarten-adaptation-course',
+        'Консультация педагога‑психолога': 'teacher-psychologist'
+    };
+
+    serviceButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.service-item');
+            const title = card ? card.querySelector('h3')?.textContent.trim() : '';
+
+            // Устанавливаем выбранную услугу в форме
+            if (title && selectText && hiddenInput) {
+                const value = serviceMap[title] || '';
+                selectText.textContent = title;
+                hiddenInput.value = value;
+            }
+
+            // Плавно прокручиваем к блоку контактов и фокусируем поле имени
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(() => nameInput && nameInput.focus(), 500);
+            }
+        });
+    });
 }); 
