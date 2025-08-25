@@ -418,6 +418,13 @@ body {
     position: relative;
 }
 
+.service-subtitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 0.5rem 0 0.5rem;
+}
+
 .service-content h3::after {
     content: '';
     position: absolute;
@@ -439,6 +446,23 @@ body {
     line-height: 1.8;
     font-size: 1.1rem;
     margin-bottom: 1rem;
+}
+
+/* Маркированный список внутри карточек услуги */
+.service-list {
+    margin: 0 0 1rem 1.1rem;
+    color: #475569;
+}
+
+.service-list li {
+    margin-bottom: 0.4rem;
+}
+
+.service-note {
+    color: #475569;
+    background: #f1f5f9;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
 }
 
 .service-price {
