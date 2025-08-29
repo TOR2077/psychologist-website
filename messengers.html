@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Связаться — Выбор мессенджера</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #f8fafc; }
+        .messengers-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+        .messengers-card { background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 32px; width: 100%; max-width: 560px; text-align: center; }
+        .messengers-card h1 { font-size: 1.8rem; margin-bottom: 1rem; color: #111827; }
+        .messengers-card p { color: #6b7280; margin-bottom: 1.5rem; }
+        .messenger-buttons { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 12px; }
+        .messenger-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease; }
+        .messenger-btn i { font-size: 1.2rem; }
+        .messenger-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
+        .btn-wa { background: #25D366; }
+        .btn-tg { background: #2AABEE; }
+        .back-link { display: inline-block; margin-top: 16px; color: #6366f1; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+    <script>
+      // Для мобильных устройств откроется соответствующее приложение, на десктопе — веб-версия
+      function waUrl() {
+        const phone = '+79776070568'; // замените при необходимости
+        const text = encodeURIComponent('Здравствуйте! Хочу записаться на консультацию.');
+        return `https://wa.me/${phone.replace(/[^\d]/g,'')}?text=${text}`;
+      }
+      function tgUrl() {
+        // Прямая ссылка на профиль/никнейм
+        const username = 'your_username'; // замените на ваш никнейм без @
+        return `https://t.me/${username}`;
+      }
+      function go(link) { window.location.href = link; }
+    </script>
+</head>
+<body>
+    <div class="messengers-wrapper">
+        <div class="messengers-card">
+            <h1>Связаться для записи</h1>
+            <p>Выберите удобный способ, и я отвечу вам как можно скорее.</p>
+            <div class="messenger-buttons">
+                <a class="messenger-btn btn-wa" href="#" onclick="go(waUrl()); return false;">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Связаться в WhatsApp
+                </a>
+                <a class="messenger-btn btn-tg" href="#" onclick="go(tgUrl()); return false;">
+                    <i class="fa-brands fa-telegram"></i>
+                    Связаться в Telegram
+                </a>
+            </div>
+            <a class="back-link" href="index.html">← Вернуться на сайт</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -39,32 +39,25 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Обработка формы
+// Обработка формы (страница может быть без формы)
 const consultationForm = document.getElementById('consultationForm');
-
-consultationForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Получаем данные формы
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    const service = formData.get('service');
-    const message = formData.get('message');
-    
-    // Простая валидация
-    if (!name || !email || !phone || !service) {
-        showNotification('Пожалуйста, заполните все обязательные поля', 'error');
-        return;
-    }
-    
-    // Имитация отправки формы
-    showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
-    
-    // Очищаем форму
-    this.reset();
-});
+if (consultationForm) {
+    consultationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const message = formData.get('message');
+        if (!name || !email || !phone || !service) {
+            showNotification('Пожалуйста, заполните все обязательные поля', 'error');
+            return;
+        }
+        showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+        this.reset();
+    });
+}
 
 // Функция для показа уведомлений
 function showNotification(message, type) {
@@ -152,45 +145,51 @@ window.addEventListener('scroll', () => {
 
 // Валидация телефона
 const phoneInput = document.getElementById('phone');
-phoneInput.addEventListener('input', function(e) {
-    let value = e.target.value.replace(/\D/g, '');
-    if (value.length > 0) {
-        value = value.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+$1 ($2) $3-$4-$5');
-    }
-    e.target.value = value;
-});
+if (phoneInput) {
+    phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 0) {
+            value = value.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+$1 ($2) $3-$4-$5');
+        }
+        e.target.value = value;
+    });
+}
 
 // Добавляем маску для телефона
-phoneInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Backspace' && this.value.length === 1) {
-        this.value = '';
-    }
-});
+if (phoneInput) {
+    phoneInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && this.value.length === 1) {
+            this.value = '';
+        }
+    });
+}
 
 // Улучшенная валидация email
 const emailInput = document.getElementById('email');
-emailInput.addEventListener('blur', function() {
-    const email = this.value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (email && !emailRegex.test(email)) {
-        this.style.borderColor = '#ef4444';
-        showNotification('Пожалуйста, введите корректный email адрес', 'error');
-    } else {
-        this.style.borderColor = '#e2e8f0';
-    }
-});
+if (emailInput) {
+    emailInput.addEventListener('blur', function() {
+        const email = this.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email)) {
+            this.style.borderColor = '#ef4444';
+            showNotification('Пожалуйста, введите корректный email адрес', 'error');
+        } else {
+            this.style.borderColor = '#e2e8f0';
+        }
+    });
+}
 
 // Добавляем счетчик символов для текстового поля
 const messageTextarea = document.getElementById('message');
-messageTextarea.addEventListener('input', function() {
-    const maxLength = 500;
-    const currentLength = this.value.length;
-    
-    if (currentLength > maxLength) {
-        this.value = this.value.substring(0, maxLength);
-    }
-});
+if (messageTextarea) {
+    messageTextarea.addEventListener('input', function() {
+        const maxLength = 500;
+        const currentLength = this.value.length;
+        if (currentLength > maxLength) {
+            this.value = this.value.substring(0, maxLength);
+        }
+    });
+}
 
 // Добавляем интерактивность для карточек услуг
 document.querySelectorAll('.service-item').forEach(item => {
@@ -229,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectOptions = document.getElementById('selectOptions');
     const selectText = document.querySelector('.select-text');
     const hiddenInput = document.getElementById('service');
-    
     if (selectTrigger && selectOptions) {
         // Открытие/закрытие меню
         selectTrigger.addEventListener('click', () => {
@@ -313,6 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     serviceButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            const href = btn.getAttribute('href') || '';
+            const isAnchor = href.startsWith('#');
+            if (!isAnchor) {
+                // Если это ссылка на отдельную страницу (например, messengers.html), даём перейти
+                return;
+            }
             e.preventDefault();
             const card = btn.closest('.service-item');
             const title = card ? card.querySelector('h3')?.textContent.trim() : '';
