@@ -273,10 +273,23 @@ body {
     height: 380px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-    border: 6px solid rgba(255,255,255,0.25);
+    border: 10px solid rgba(255,255,255,0.3);
+    box-shadow: 
+        0 0 0 6px rgba(255, 255, 255, 0.1),
+        0 20px 50px rgba(0,0,0,0.25),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(2px);
     flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.hero-photo:hover {
+    transform: scale(1.02);
+    border-color: rgba(255,255,255,0.4);
+    box-shadow: 
+        0 0 0 8px rgba(255, 255, 255, 0.15),
+        0 25px 60px rgba(0,0,0,0.3),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
 .image-placeholder {
@@ -878,6 +891,20 @@ body {
         height: 280px;
         max-width: 280px;
         flex-shrink: 0;
+        border: 8px solid rgba(255,255,255,0.3);
+        box-shadow: 
+            0 0 0 4px rgba(255, 255, 255, 0.1),
+            0 15px 40px rgba(0,0,0,0.25),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+    
+    .hero-photo:hover {
+        transform: scale(1.01);
+        border-color: rgba(255,255,255,0.4);
+        box-shadow: 
+            0 0 0 6px rgba(255, 255, 255, 0.15),
+            0 20px 50px rgba(0,0,0,0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     .about-content {
@@ -887,12 +914,27 @@ body {
     }
 
     .about-photo {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto;
-    }
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 8px solid #6366f1;
+    box-shadow: 
+        0 0 0 4px rgba(99, 102, 241, 0.2),
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 0 6px rgba(99, 102, 241, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
 
     .contact-content {
         grid-template-columns: 1fr;
@@ -1015,6 +1057,20 @@ body {
         height: 250px;
         max-width: 250px;
         flex-shrink: 0;
+        border: 6px solid rgba(255,255,255,0.3);
+        box-shadow: 
+            0 0 0 3px rgba(255, 255, 255, 0.1),
+            0 12px 35px rgba(0,0,0,0.25),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+    
+    .hero-photo:hover {
+        transform: scale(1.01);
+        border-color: rgba(255,255,255,0.4);
+        box-shadow: 
+            0 0 0 4px rgba(255, 255, 255, 0.15),
+            0 15px 45px rgba(0,0,0,0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     .btn {
@@ -1071,6 +1127,37 @@ body {
     .about-photo {
         width: 200px;
         height: 200px;
+        border: 6px solid #6366f1;
+        box-shadow: 
+            0 0 0 3px rgba(99, 102, 241, 0.2),
+            0 8px 25px rgba(0, 0, 0, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    
+    .about-photo:hover {
+        transform: scale(1.03);
+        box-shadow: 
+            0 0 0 4px rgba(99, 102, 241, 0.3),
+            0 12px 35px rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+    
+    .about-photo {
+        width: 180px;
+        height: 180px;
+        border: 5px solid #6366f1;
+        box-shadow: 
+            0 0 0 2px rgba(99, 102, 241, 0.2),
+            0 6px 20px rgba(0, 0, 0, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    
+    .about-photo:hover {
+        transform: scale(1.02);
+        box-shadow: 
+            0 0 0 3px rgba(99, 102, 241, 0.3),
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     }
 
     .credential span {
