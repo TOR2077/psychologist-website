@@ -1,4 +1,9 @@
 /* Общие стили */
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +15,18 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Навигация */
@@ -110,6 +121,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -190,6 +203,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-title {
@@ -849,6 +864,9 @@ body {
         text-align: center;
         gap: 2rem;
         padding: 0 15px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
 
     .hero-title {
@@ -1060,6 +1078,9 @@ body {
 
     .container {
         padding: 0 10px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
 
     .section-title {
@@ -1073,6 +1094,9 @@ body {
     .hero-container {
         gap: 3rem;
         padding: 0 30px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
     
     .hero-title {
