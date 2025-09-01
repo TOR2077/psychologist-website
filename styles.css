@@ -1063,6 +1063,7 @@ body {
             0 0 0 3px rgba(255, 255, 255, 0.1),
             0 12px 35px rgba(0,0,0,0.25),
             inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
     }
     
     .hero-photo:hover {
@@ -1072,6 +1073,7 @@ body {
             0 0 0 4px rgba(255, 255, 255, 0.15),
             0 15px 45px rgba(0,0,0,0.3),
             inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
     }
 
     .btn {
@@ -1351,6 +1353,15 @@ body {
     
     .contact-content {
         gap: 3rem;
+    }
+    
+    .hero-photo {
+        border-radius: 50%;
+        border: 8px solid rgba(255,255,255,0.3);
+        box-shadow: 
+            0 0 0 4px rgba(255, 255, 255, 0.1),
+            0 15px 40px rgba(0,0,0,0.25),
+            inset 0 0 0 2px rgba(255, 255, 255, 0.2);
     }
 }
 
