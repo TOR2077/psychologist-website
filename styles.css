@@ -281,7 +281,6 @@ body {
     backdrop-filter: blur(2px) !important;
     flex-shrink: 0 !important;
     transition: all 0.3s ease !important;
-    clip-path: circle(50% at 50% 50%) !important;
 }
 
 .hero-photo:hover {
@@ -927,7 +926,6 @@ body {
     backdrop-filter: blur(2px) !important;
     margin: 0 auto !important;
     transition: all 0.3s ease !important;
-    clip-path: circle(50% at 50% 50%) !important;
 }
 
 .about-photo:hover {
@@ -1217,7 +1215,6 @@ body {
             0 0 0 6px rgba(255, 255, 255, 0.1),
             0 20px 50px rgba(0,0,0,0.25),
             inset 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
-        clip-path: circle(50% at 50% 50%) !important;
     }
     
     .about-photo {
@@ -1229,7 +1226,6 @@ body {
             0 20px 50px rgba(0,0,0,0.25),
             inset 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
         backdrop-filter: blur(2px) !important;
-        clip-path: circle(50% at 50% 50%) !important;
     }
 }
 
