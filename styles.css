@@ -395,6 +395,94 @@ body {
     pointer-events: none;
 }
 
+.work-with {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.work-card {
+    display: block;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-card:hover::before {
+    opacity: 1;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.35);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.work-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.work-card__desc {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.parents-tips {
+    padding: 3rem 0;
+    background: #f8fafc;
+}
+
+.parents-tips-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.parents-tips-content p {
+    margin-bottom: 1rem;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.parents-tips-content p strong {
+    display: inline-block;
+    font-size: 1.15rem;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
 .services-container {
     display: flex;
     flex-direction: column;
@@ -1427,6 +1515,24 @@ html {
     /* Оптимизация отступов */
     .services {
         padding: 2rem 0;
+    }
+    
+    .work-with {
+        padding: 2rem 0;
+    }
+    
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .parents-tips {
+        padding: 2rem 0;
+    }
+    
+    .parents-tips-content {
+        padding: 1rem;
+        margin: 0 10px;
     }
     
     .about {
