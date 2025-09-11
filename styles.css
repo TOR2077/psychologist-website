@@ -517,6 +517,9 @@ body {
     color: #1e293b;
     line-height: 1.4;
     margin: 0;
+    word-wrap: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 .parents-tips {
@@ -1605,6 +1608,11 @@ body {
 
 /* Планшеты */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .work-card__title {
+        font-size: 1.1rem;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
     .hero-container {
         gap: 3rem;
         padding: 0 30px;
@@ -1732,6 +1740,8 @@ html {
     
     .work-card__title {
         font-size: 1.1rem;
+        word-wrap: break-word;
+        hyphens: auto;
     }
     
     .parents-tips {
