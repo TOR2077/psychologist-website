@@ -456,31 +456,149 @@ body {
 
 .parents-tips {
     padding: 3rem 0;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
 }
 
-.parents-tips-content {
-    max-width: 800px;
+.parents-tips-wrapper {
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.tips-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.tips-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.tips-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.tips-question {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tip-card {
     background: white;
     border-radius: 16px;
     padding: 1.5rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
 }
 
-.parents-tips-content p {
-    margin-bottom: 1rem;
-    color: #475569;
-    font-size: 1.05rem;
-    line-height: 1.8;
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-.parents-tips-content p strong {
-    display: inline-block;
-    font-size: 1.15rem;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+.tip-card--warning {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.tip-card--solution {
+    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+.tip-card--highlight {
+    border-left: 4px solid #6366f1;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+}
+
+.tip-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.tip-card .tip-icon {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+}
+
+.tip-card--warning .tip-icon {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.tip-card--solution .tip-icon {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.tip-card--highlight .tip-icon {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.tip-icon i {
+    font-size: 1.2rem;
+}
+
+.tip-text h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+}
+
+.tip-text p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.tips-cta {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.tips-cta p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .services-container {
@@ -1530,9 +1648,62 @@ html {
         padding: 2rem 0;
     }
     
-    .parents-tips-content {
+    .tips-header {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tips-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+    
+    .tips-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .tips-question {
+        font-size: 1.2rem;
+    }
+    
+    .tips-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tip-card {
         padding: 1rem;
-        margin: 0 10px;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .tip-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+    
+    .tip-icon i {
+        font-size: 1rem;
+    }
+    
+    .tip-text h4 {
+        font-size: 1rem;
+    }
+    
+    .tip-text p {
+        font-size: 0.9rem;
+    }
+    
+    .tips-cta {
+        padding: 1.5rem;
+    }
+    
+    .tips-cta p {
+        font-size: 1rem;
     }
     
     .about {
