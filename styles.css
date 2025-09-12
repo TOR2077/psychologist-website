@@ -55,8 +55,9 @@ body {
         font-size: 1.3rem;
     }
     
-    .nav-logo i {
-        font-size: 1.5rem;
+    .nav-logo .logo-image {
+        width: 35px;
+        height: 35px;
     }
     
     /* Анимация гамбургер-меню */
@@ -133,9 +134,12 @@ body {
     color: #6366f1;
 }
 
-.nav-logo i {
+.nav-logo .logo-image {
     margin-right: 0.5rem;
-    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .nav-menu {
@@ -1107,6 +1111,24 @@ body {
     font-weight: 600;
     margin-bottom: 1rem;
     color: #6366f1;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-right: 0.75rem;
+}
+
+.footer-logo h4 {
+    margin-bottom: 0;
 }
 
 .footer-section ul {
