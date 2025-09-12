@@ -1901,6 +1901,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
 }
 
 .lesson-list {
@@ -1920,6 +1924,9 @@ html {
     font-size: 0.9rem;
     line-height: 1.4;
     position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .lesson-list li:last-child {
@@ -1935,19 +1942,21 @@ html {
     
     .course-lesson {
         padding: 1.2rem;
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
+        height: 200px;
+        min-height: 200px;
+        max-height: 200px;
     }
     
     .course-lesson h5 {
         font-size: 1rem;
-        height: 50px;
+        height: 60px;
+        line-height: 1.2;
     }
     
     .lesson-list li {
         font-size: 0.85rem;
         margin-bottom: 0.5rem;
+        line-height: 1.3;
     }
 }
 
@@ -1958,18 +1967,20 @@ html {
     
     .course-lesson {
         padding: 1rem;
-        height: 160px;
-        min-height: 160px;
-        max-height: 160px;
+        height: 180px;
+        min-height: 180px;
+        max-height: 180px;
     }
     
     .course-lesson h5 {
-        font-size: 0.95rem;
-        height: 45px;
+        font-size: 0.9rem;
+        height: 55px;
+        line-height: 1.1;
     }
     
     .lesson-list li {
         font-size: 0.8rem;
         margin-bottom: 0.4rem;
+        line-height: 1.2;
     }
 } 
