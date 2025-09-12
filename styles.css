@@ -1857,16 +1857,12 @@ html {
 .course-schedule {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
     margin-top: 1rem;
-    align-items: start;
+    align-items: stretch;
 }
 
-.course-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
 
 .course-lesson {
     background: rgba(255, 255, 255, 0.8);
@@ -1939,10 +1935,6 @@ html {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-    }
-    
-    .course-column {
-        display: contents;
     }
     
     .course-lesson {
